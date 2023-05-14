@@ -11,5 +11,5 @@ RUN gradle bootJar
 FROM openjdk:17-jdk-slim
 # ENV PORT=8080
 EXPOSE 8080
-COPY --from=build build/libs/tasks-0.0.1-SNAPSHOT.war crud.war
+COPY --from=build /build/libs/tasks-0.0.1-SNAPSHOT.war crud.war
 ENTRYPOINT ["java", "-war", "crud.war"]
