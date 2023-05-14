@@ -1,3 +1,2 @@
-FROM tomcat:9.0.74
-EXPOSE 8080
-CMD ["./runcrud.bat"]
+FROM gradle:7.3-jdk17
+CMD ["./gradlew", "bootRun"]
