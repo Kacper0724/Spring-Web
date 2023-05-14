@@ -3,7 +3,7 @@
 #
 FROM gradle:7.3-jdk17 AS build
 COPY . .
-RUN ./gradlew bootJar --no-daemon
+RUN gradle bootJar --no-daemon
 
 #
 # Package stage
