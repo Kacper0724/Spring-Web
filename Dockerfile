@@ -9,7 +9,7 @@ RUN gradle clean build -i --stacktrace
 # Package stage
 #
 FROM openjdk:17-jdk-slim
-COPY --from=build build/libs/tasks-0.0.1-SNAPSHOT.jar crud.jar
+COPY --from=builder build/libs/tasks-0.0.1-SNAPSHOT.jar crud.jar
 # ENV PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["./gradlew", "bootRun"]
