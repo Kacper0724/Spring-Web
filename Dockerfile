@@ -2,6 +2,6 @@ FROM gradle:7.6-jdk
 COPY . .
 RUN gradle bootJar
 
-FROM tomcat:9.0.74
+FROM openjdk:17-jdk-slim
 COPY ./ build/libs/crud.war
-ENTRYPOINT ["tomcat", "-war", "crud.war"]
+ENTRYPOINT ["java", "-war", "crud.war"]
