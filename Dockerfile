@@ -1,4 +1,7 @@
+FROM gradle:7.6-jdk
+COPY . .
+RUN gradle bootJar
+
 FROM tomcat:9.0.74
-COPY runcrud.bat ./
-RUN "./runcrud.bat"
-CMD ["./runcrud.bat"]
+COPY ./ build/libs/crud.war
+CMD ["./crud.war"]
