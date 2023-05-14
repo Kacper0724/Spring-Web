@@ -1,4 +1,4 @@
-FROM gradle:7.6-jdk
+FROM gradle:7.6-jdk AS build
 COPY . .
 RUN gradle bootJar
 
