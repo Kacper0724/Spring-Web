@@ -9,7 +9,7 @@ RUN gradle bootJar
 # Package stage
 #
 FROM openjdk:17-jdk-slim
-COPY ./ runcrud.bat
+COPY ./ build/libs/crud.war
 # ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","-bat","runcrud.bat"]
+ENTRYPOINT ["java","-war","crud.war"]
