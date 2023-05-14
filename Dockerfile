@@ -1,2 +1,3 @@
-FROM gradle:7.3-jdk17
-CMD ["./gradlew", "bootRun"]
+FROM tomcat:9.0.74
+COPY build/libs/crud.war ./
+RUN crud.war ./
