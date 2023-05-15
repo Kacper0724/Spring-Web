@@ -1,4 +1,4 @@
-FROM tomcat:9.0.74
-COPY ./ build/libs/crud.war
+FROM openjdk:17-headless
+COPY . .
 EXPOSE 8080
-ENTRYPOINT ["tomcat", "startup.bat"]
+ENTRYPOINT ["./gradlew", "bootRun"]
