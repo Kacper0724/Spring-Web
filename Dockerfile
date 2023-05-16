@@ -1,4 +1,4 @@
 FROM openjdk:17-jdk-slim
-COPY build/libs/crud.war app.war
+COPY app.war build/libs/crud.war
 ENTRYPOINT ["java", "-war", "/app.war"]
 EXPOSE 8080
